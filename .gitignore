@@ -1,0 +1,41 @@
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Compiled binary addons (if any)
+/build/Release
+
+# Cache directories
+.cache/
+.npm/
+
+# OS generated files
+.DS_Store
+
+# EJS template cache
+views/cache/
+
+# Generated files by Joi
+joi-errors.json
+
+# IDE specific files
+*.iml
+
+# Ignore package-lock.json if using npm
+package-lock.json
+
+# Ignore yarn lock file if using yarn
+yarn.lock
