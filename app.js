@@ -3,7 +3,6 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require('express-session');
@@ -16,6 +15,7 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
+const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
 const sessionOptions = {
   secret : "mysupersecretstring",
@@ -65,6 +65,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req , res , next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
+  res.locals.currUser = req.user;
   next();
 })
 
